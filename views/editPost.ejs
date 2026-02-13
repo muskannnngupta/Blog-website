@@ -1,0 +1,12 @@
+<%- include("header.ejs") %>
+<h1>Edit Post</h1>
+
+<form action="/edit-post" method="POST">
+    <input type="text" name = "id" value = "<%= post.id %>" hidden>
+    <input id="title" type="text" name="title" value="<%= post.title %>" required>
+    <label for="title">Title</label>
+    <textarea name="content" id="content" required><%= post.content %></textarea>
+    <label for="content">Content</label>
+    <button type="submit">Save Changes</button>
+</form>
+<%- include("footer.ejs") %>

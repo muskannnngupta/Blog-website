@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+            
+<ul>
+    <% posts.forEach(post => { %>
+        <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>
+    <% }); %>
+</ul>
+<div id="buttonbox">
+    <a href="/new-post">
+        <button class = "btn btn-primary">
+            Create new post
+        </button>
+    </a>
+</div>
+
+  <%- include("partials/footer.ejs") %>
