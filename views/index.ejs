@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+<% if (posts.length === 0) { %>
+    <section class="empty-state">
+        <h2>No posts yet</h2>
+        <p>Start writing your first blog and share your ideas.</p>
+        <a class="btn-new-post" href="/new-post">Create your first post</a>
+    </section>
+<% } else { %>
+    <section class="posts-grid">
+        <% posts.forEach(post => { %>
+            <article class="post-card">
+                <h2 class="post-title"><%= post.title %></h2>
+                <p class="post-excerpt"><%= post.content %></p>
+                <div class="post-footer">
+                    <a class="post-link" href="/post/<%= post.id %>">Read More</a>
+                    <a class="btn-edit" href="/post/<%= post.id %>/edit">Edit</a>
+                    <a class="btn-delete" href="/post/<%= post.id %>/delete">Delete</a>
+                </div>
+            </article>
+        <% }); %>
+    </section>
+<% } %>
+
+  <%- include("partials/footer.ejs") %>

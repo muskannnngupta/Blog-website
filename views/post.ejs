@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<article class="post-detail">
+  <h1><%= post.title %></h1>
+  <p><%= post.content %></p>
+  <div class="post-actions">
+    <a class="btn-back" href="/">Back</a>
+    <a class="btn-edit-post" href="/post/<%= post.id %>/edit">Edit Post</a>
+    <a class="btn-delete-post" href="/post/<%= post.id %>/delete">Delete Post</a>
+  </div>
+</article>
+<%- include("partials/footer.ejs") %>
