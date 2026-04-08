@@ -3,6 +3,29 @@ import express from "express";
 const app = express();
 const port = process.env.PORT || 3000;
 
+var posts = [
+    {
+        id: 1,
+        title: "My Journey into Programming",
+        content: "I started learning coding with curiosity and fear. At first, everything looked confusing, but I kept practicing every day. Slowly, I understood how things work. Making small projects helped me gain confidence. Today, I enjoy learning new technologies and improving myself."
+    },
+    {   
+        id: 2,
+        title: "Why Technology Matters",
+        content: "Technology makes our life easier and faster. From mobile apps to online learning, everything depends on software. Learning tech skills helps us grow professionally. It also improves our problem-solving ability. In today’s world, technical knowledge is very important."
+    },
+    {
+        id: 3,
+        title: "Believe in Yourself",
+        content: "Everyone learns at a different speed. Comparing yourself with others is not helpful. Focus on your own progress and keep improving. Trust your abilities and stay positive. Hard work always pays off."
+    },
+    {
+        id: 4,
+        title: "Staying Motivated in Tech",
+        content: "Learning programming is not always easy. Errors and bugs can feel frustrating. When I feel tired, I take short breaks and start again. Setting small goals helps me stay focused. Every small success motivates me to move forward."
+    }
+]
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
@@ -94,26 +117,4 @@ app.listen(port , () => {
 
 
 
-var posts = [
-    {
-        id: 1,
-        title: "My Journey into Programming",
-        content: "I started learning coding with curiosity and fear. At first, everything looked confusing, but I kept practicing every day. Slowly, I understood how things work. Making small projects helped me gain confidence. Today, I enjoy learning new technologies and improving myself."
-    },
-    {   
-        id: 2,
-        title: "Why Technology Matters",
-        content: "Technology makes our life easier and faster. From mobile apps to online learning, everything depends on software. Learning tech skills helps us grow professionally. It also improves our problem-solving ability. In today’s world, technical knowledge is very important."
-    },
-    {
-        id: 3,
-        title: "Believe in Yourself",
-        content: "Everyone learns at a different speed. Comparing yourself with others is not helpful. Focus on your own progress and keep improving. Trust your abilities and stay positive. Hard work always pays off."
-    },
-    {
-        id: 4,
-        title: "Staying Motivated in Tech",
-        content: "Learning programming is not always easy. Errors and bugs can feel frustrating. When I feel tired, I take short breaks and start again. Setting small goals helps me stay focused. Every small success motivates me to move forward."
-    }
-]
-console.log(posts);
+
