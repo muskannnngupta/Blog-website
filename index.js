@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
 
-    res.render("index.ejs", { posts: posts });
+    res.render("index", { posts: posts });
 
 });
 
@@ -17,11 +17,11 @@ app.get("/post/:id" , (req , res) => {
     const postId = parseInt(req.params.id);
     console.log(postId);
     var post = posts.find(post => post.id == postId);
-    res.render("post.ejs" , { post: post });
+    res.render("post" , { post: post });
 })
 
 app.get("/new-post" , (req , res) => {
-    res.render("newPost.ejs");
+    res.render("newPost");
 });
 
 app.post("/new-post" , (req , res) => {
@@ -47,7 +47,7 @@ app.get("/post/:id/delete" , (req , res) => {
 
 app.get("/post/:id/edit" , (req , res) => {
 
-    res.render("editPost.ejs" , { post: posts.find(post => post.id == parseInt(req.params.id)) });
+    res.render("editPost" , { post: posts.find(post => post.id == parseInt(req.params.id)) });
 
 }   );
 
