@@ -1,14 +1,12 @@
 <%- include("partials/header.ejs") %>
-<p><%= post.content %></p>
 
-<form action="/post/<%= post.id %>/delete" method="POST">
-    <button class = "btn btn-primary" >
-        Delete post
-    </button>
-</form>
-<a href="/post/<%= post.id %>/edit ">
-    <button class = "btn btn-primary">
-        Edit post
-    </button>
-</a>
+<article class="post-detail">
+  <h1><%= post.title %></h1>
+  <p><%= post.content %></p>
+  <div class="post-actions">
+    <a class="btn-back" href="/">Back</a>
+    <a class="btn-edit-post" href="/post/<%= post.id %>/edit">Edit Post</a>
+    <a class="btn-delete-post" href="/post/<%= post.id %>/delete">Delete Post</a>
+  </div>
+</article>
 <%- include("partials/footer.ejs") %>

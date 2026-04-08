@@ -1,11 +1,18 @@
 <%- include("partials/header.ejs") %>
-<h1>Create New Post</h1>
 
 <form action="/new-post" method="POST">
-    <input id="title" type="text" name="title"  required>
-    <label for="title">Title</label>
-    <textarea name="content" id="content" required></textarea>
-    <label for="content">Content</label>
-    <button type="submit">Submit</button>
+  <div class="form-container">
+      <h1>Create New Post</h1>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" type="text" name="title" placeholder="Enter your post title" required />
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea name="content" id="content" placeholder="Write your thoughts here..." required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Publish Post</button>
+  </div>
 </form>
+
 <%- include("partials/footer.ejs") %>

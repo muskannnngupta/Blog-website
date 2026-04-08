@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
 
@@ -35,7 +36,7 @@ app.post("/new-post" , (req , res) => {
     res.redirect("/");
 });
 
-app.post("/post/:id/delete" , (req , res) => {
+app.get("/post/:id/delete" , (req , res) => {
     const postId = parseInt(req.params.id);
     posts = posts.filter(post => post.id != postId);
 
